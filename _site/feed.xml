@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Your awesome title</title>
-    <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+    <title>Marius Ørvik</title>
+    <description>Marius Ørvik has 10 years experience with digital marketing, e-commerce and growing online businesses. 
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 24 Nov 2016 11:03:28 +0100</pubDate>
-    <lastBuildDate>Thu, 24 Nov 2016 11:03:28 +0100</lastBuildDate>
+    <pubDate>Thu, 24 Nov 2016 13:35:14 +0100</pubDate>
+    <lastBuildDate>Thu, 24 Nov 2016 13:35:14 +0100</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
     
       <item>

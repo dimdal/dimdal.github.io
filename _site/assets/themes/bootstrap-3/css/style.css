@@ -64,6 +64,17 @@ body {
 	border-color: #8CD33F;
 }
 
+/* Frontpage on big screen */
+@media screen and (min-width: 1200px) {
+	.frontpage-header {
+		padding-top: 300px;
+	}
+	.row {
+		margin-right: 0;
+		margin-left: 0;
+	}
+}
+
 
 /* posts index */
 .post > h3.title {

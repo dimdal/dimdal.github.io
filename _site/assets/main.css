@@ -1,0 +1,176 @@
+/*--------------------------------------------------------------
+CSS Reset
+--------------------------------------------------------------*/
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #60616B 0%, #2B2B2D 25%, #1D1D1D 100%) no-repeat;
+  min-height: 100vh; }
+
+img {
+  display: block;
+  border: 0;
+  width: 100%;
+  height: auto; }
+
+.card {
+  background: linear-gradient(135deg, #383941 0%, #26262B 5%, #000000 100%) no-repeat;
+  box-shadow: 3px 5px 9px 0 rgba(0, 0, 0, 0.5); }
+
+/*--------------------------------------------------------------
+Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers */
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden; }
+
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar */ }
+
+/*--------------------------------------------------------------
+General Styles
+--------------------------------------------------------------*/
+.card-text > h1, h2 {
+  margin: 0;
+  line-height: 1.2em; }
+
+.card-text > p {
+  margin-top: 2em; }
+
+.card-text {
+  margin-bottom: 2em; }
+
+.connect-logo {
+  display: inline;
+  max-width: 30px; }
+
+.card-portrait img {
+  max-width: 450px; }
+
+/*--------------------------------------------------------------
+Typography
+--------------------------------------------------------------*/
+body,
+button,
+input,
+select,
+textarea {
+  font-family: 'Avenir Next';
+  color: #fff;
+  font-size: 18px;
+  font-weight: 100;
+  line-height: 1.5; }
+
+h1 {
+  font-size: 65px;
+  color: #FFFFFF;
+  font-weight: 700;
+  letter-spacing: 2px; }
+
+h2,
+h3 {
+  font-size: 30px;
+  font-weight: 100;
+  color: #FFFFFF;
+  letter-spacing: 0; }
+
+p {
+  margin: 0;
+  padding: 1em 0; }
+
+/*--------------------------------------------------------------
+CSS Grid layout for wider screens, when browser supports grid:
+--------------------------------------------------------------*/
+@supports (display: grid) {
+  @media screen and (min-width: 481px) {
+    .site {
+      display: grid;
+      grid-template-columns: 1fr 8fr 1fr;
+      grid-template-rows: 1fr 5fr 1fr; }
+
+    .card-header {
+      display: grid;
+      grid-template-columns: 2fr 8fr 1fr;
+      padding: 1.2em 1.2em; }
+
+    .card-content {
+      display: grid;
+      grid-template-columns: 1fr 5fr 1fr 4fr 1fr; }
+
+    .card {
+      display: grid;
+      grid-column-start: 2;
+      grid-row-start: 2; }
+
+    .card-logo {
+      justify-self: start; }
+
+    .card-menu {
+      grid-column-start: 3;
+      justify-self: end; }
+
+    .card-text {
+      grid-column-start: 2;
+      align-self: center; }
+
+    .card-portrait {
+      grid-column-start: 4;
+      align-self: end; } }
+  @media screen and (min-width: 1200px) {
+    .site {
+      grid-template-columns: 2fr 5fr 2fr; } }
+  /* Smartphones (portrait) ----------- */
+  @media screen and (max-width: 480px) {
+    .site {
+      display: grid;
+      grid-template-columns: .05fr 1fr .05fr;
+      grid-template-rows: .1fr 5fr 1fr; }
+
+    .card {
+      grid-row-start: 2;
+      grid-column-start: 2; }
+
+    .card-header {
+      display: grid;
+      grid-template-columns: 1fr 2fr 0.2fr;
+      padding: 1.2em 1.2em; }
+
+    .card-text {
+      justify-self: center; }
+
+    .card-portrait {
+      justify-self: center; }
+
+    .card-content {
+      display: grid;
+      padding: 2em 1.2em 0 1.2em;
+      grid-template-columns: 1fr; }
+
+    .card-menu {
+      grid-column-start: 3; } } }

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="29px" height="29px" viewBox="0 0 29 29" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>Email</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-214.000000, -539.000000)">
+            <g id="Card" transform="translate(77.000000, 73.000000)">
+                <g id="Social-Buttons" transform="translate(100.000000, 466.000000)">
+                    <g id="Linkedin-Copy" transform="translate(37.000000, 0.000000)">
+                        <g id="Linkedin" fill="#FFFFFF">
+                            <circle id="Oval-1-Copy-5" cx="14.5" cy="14.5" r="14.5"></circle>
+                        </g>
+                        <g id="Group" transform="translate(5.414844, 8.655469)" stroke="#2E2E35">
+                            <path d="M1,1.86851709 L1,11 L17,11 L17,1.86851709 L9,7.20185043 L1,1.86851709 Z" id="Rectangle" stroke-width="2"></path>
+                            <path d="M0.075132669,0.971055024 L17.9993872,0.971055052" id="Path-2" stroke-width="2"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -43,12 +43,10 @@ google_analytics: UA-25154517-1
 markdown: kramdown
 theme: minima
 gems:
-  - jekyll-feed
+  - github-pages
 exclude:
   - Gemfile
   - Gemfile.lock
-
-
-
-
+plugins:
+   - github-pages
 

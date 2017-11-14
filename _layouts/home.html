@@ -9,7 +9,11 @@ layout: frontpage
         <img src="/assets/images/Logo.svg">
       </div>
       <div class="card-menu">
-        <img src="/assets/images/Menu.svg">
+        <input type="checkbox" id="navigation" />
+          <label for="navigation">
+            <img src="/assets/images/Menu.svg">
+          </label>
+        {% include _navigation.html %}
       </div>
     </div>
     <div class="card-content">

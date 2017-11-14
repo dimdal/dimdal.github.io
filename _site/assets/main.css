@@ -31,6 +31,29 @@ General Styles
 .card-portrait img { max-width: 450px; }
 
 /*--------------------------------------------------------------
+Navigation
+--------------------------------------------------------------*/
+nav { position: fixed; top: 0; right: 0; width: 250px; height: 100%; margin: 0 -250px 0 0; -moz-transition: all 200ms ease-in; -webkit-transition: all 200ms ease-in; -o-transition: all 200ms ease-in; transition: all 200ms ease-in; }
+
+nav ul { width: 250px; height: 100%; padding: 0; margin: 0; list-style: none; background: #1d1d1d; overflow: hidden; }
+
+nav li { margin: 0; }
+
+nav a { color: #fff; font-size: 1em; text-decoration: none; display: block; padding: 12px 15px; font-weight: 300; letter-spacing: 2px; border-bottom: 1px solid #333; }
+
+nav a:hover { text-decoration: underline; }
+
+input[type="checkbox"] { display: none; }
+
+input[type="checkbox"]:checked ~ nav { margin: 0; }
+
+.close { margin-top: 20px; font-size: 16px; text-align: center; }
+
+.close:hover { text-decoration: underline; }
+
+/* input[type="checkbox"]:checked ~ label{ right:260px;
+} */
+/*--------------------------------------------------------------
 Typography
 --------------------------------------------------------------*/
 body, button, input, select, textarea { font-family: 'Avenir Next'; color: #fff; font-size: 18px; font-weight: 100; line-height: 1.5; }

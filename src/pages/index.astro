@@ -1,0 +1,407 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Marius Ørvik - VP Product & Engineering">
+  <div class="hero">
+    <div class="hero-badge">VP Product & Engineering</div>
+    <h1>Marius Ørvik</h1>
+    <p class="tagline">Scaling B2B SaaS through AI-Driven Innovation</p>
+    <p class="intro">
+      <strong>10+ years of product leadership</strong> driving <strong>multi-million ARR growth</strong> in B2B SaaS.
+      Track record of uniting Product, Engineering, and Design to deliver measurable business impact through
+      AI/ML innovation and operational excellence.
+    </p>
+  </div>
+
+  <section class="impact">
+    <div class="section-header">
+      <span class="section-number">01</span>
+      <h2>Leadership Impact</h2>
+    </div>
+
+    <div class="impact-grid">
+      <div class="impact-card" style="animation-delay: 0.15s">
+        <div class="card-icon">🎯</div>
+        <h3>Executive Impact</h3>
+        <ul>
+          <li><strong>Executive Leadership Team</strong> member reporting to CEO with end-to-end ownership of product strategy, discovery, delivery, and performance across <strong>5,000+ businesses</strong></li>
+          <li>Key contributor in <strong>three funding rounds raising $20M total</strong>, scaling Timely through product-led growth</li>
+          <li>Led distributed teams across <strong>Europe and Americas</strong> with async-first operating model</li>
+        </ul>
+      </div>
+
+      <div class="impact-card" style="animation-delay: 0.3s">
+        <div class="card-icon">🤖</div>
+        <h3>AI & Innovation</h3>
+        <ul>
+          <li>Founded <strong>AI/ML team from scratch</strong>, establishing competitive moat through proprietary dataset</li>
+          <li>Completed advanced ML coursework (Stanford, deeplearning.ai) to <strong>lead product design of pipeline</strong> using neural networks, SVMs, and LLMs</li>
+          <li>Translated complex ML capabilities into user-facing features for <strong>5,000+ clients</strong></li>
+        </ul>
+      </div>
+
+      <div class="impact-card" style="animation-delay: 0.45s">
+        <div class="card-icon">👥</div>
+        <h3>Team & Systems</h3>
+        <ul>
+          <li>Identified and developed PMs from <strong>non-traditional backgrounds</strong>: Marketing, Support, QA → senior product roles</li>
+          <li><strong>Unified siloed Product and Engineering</strong> functions under one high-performing operating model</li>
+          <li>Built evidence-based decision-making culture using frameworks like <strong>Cost of Delay</strong> and <strong>Jobs to be Done</strong></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="philosophy">
+    <div class="section-header">
+      <span class="section-number">02</span>
+      <h2>Approach & Philosophy</h2>
+    </div>
+
+    <div class="philosophy-content">
+      <p class="philosophy-text">
+        I build <strong>high-trust, outcome-driven organizations</strong> that balance autonomy with alignment.
+        My leadership style combines strategic vision with deep product craft, prioritizing clarity, evidence-based
+        decision-making, and creating environments where great teams do their best work. Experienced scaling from
+        small teams to distributed organizations, adapting leadership approach to company stage and complexity.
+      </p>
+
+      <div class="principles">
+        <div class="principle">
+          <strong>Product-Led Growth</strong>
+          <span>PLG experimentation driving sustainable ARR</span>
+        </div>
+        <div class="principle">
+          <strong>Evidence-Based</strong>
+          <span>Data-informed prioritization frameworks</span>
+        </div>
+        <div class="principle">
+          <strong>Team Empowerment</strong>
+          <span>Autonomous teams owning outcomes</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="cta-content">
+      <h3>Let's Connect</h3>
+      <p>Interested in discussing product leadership, AI innovation, or B2B SaaS growth?</p>
+      <div class="cta-buttons">
+        <a href="/about" class="button">View Full Experience</a>
+        <a href="/contact" class="button-secondary">Get In Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    @keyframes slideInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .hero {
+      padding: 4rem 0;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: linear-gradient(135deg, var(--color-accent), var(--color-purple));
+      color: white;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-radius: 6px;
+      margin-bottom: 1.5rem;
+      animation: slideInUp 0.6s var(--ease-out-expo);
+    }
+
+    .hero h1 {
+      animation: slideInUp 0.6s var(--ease-out-expo) 0.1s both;
+    }
+
+    .tagline {
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      color: var(--color-text-light);
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+      animation: slideInUp 0.6s var(--ease-out-expo) 0.2s both;
+    }
+
+    .intro {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      max-width: 800px;
+      color: var(--color-text-light);
+      margin-bottom: 2.5rem;
+      animation: slideInUp 0.6s var(--ease-out-expo) 0.3s both;
+    }
+
+    .intro strong {
+      color: var(--color-text);
+      font-weight: 600;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-number {
+      font-family: 'Poppins', sans-serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--color-border);
+      line-height: 1;
+    }
+
+    .section-header h2 {
+      margin: 0;
+    }
+
+    .impact {
+      margin-top: 0;
+      margin-bottom: 6rem;
+    }
+
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .impact-card {
+      padding: 1.75rem;
+      background: white;
+      border-radius: var(--border-radius);
+      border: 1px solid var(--color-border);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s var(--ease-out-expo);
+      animation: scaleIn 0.6s var(--ease-out-expo) both;
+    }
+
+    .impact-card:hover {
+      transform: translateY(-8px) rotate(-0.5deg);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--color-accent);
+    }
+
+    .card-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    .impact-card h3 {
+      margin-bottom: 1rem;
+      font-size: 1.35rem;
+    }
+
+    .impact-card ul {
+      margin-left: 0;
+      list-style: none;
+    }
+
+    .impact-card li {
+      padding-left: 1.5rem;
+      position: relative;
+      margin-bottom: 0.75rem;
+      color: var(--color-text-light);
+      line-height: 1.6;
+    }
+
+    .impact-card li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--color-accent);
+      font-weight: bold;
+    }
+
+    .impact-card strong {
+      color: var(--color-text);
+      font-weight: 600;
+    }
+
+    .philosophy {
+      margin-bottom: 6rem;
+      padding: 3rem;
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.03), rgba(139, 92, 246, 0.03));
+      border-radius: var(--border-radius);
+      border: 1px solid var(--color-border);
+    }
+
+    .philosophy-text {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+      max-width: 900px;
+    }
+
+    .philosophy-text strong {
+      color: var(--color-text);
+      font-weight: 600;
+    }
+
+    .principles {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .principle {
+      padding: 1.5rem;
+      background: white;
+      border-radius: 8px;
+      border-left: 3px solid var(--color-accent);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .principle strong {
+      color: var(--color-text);
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+
+    .principle span {
+      color: var(--color-text-light);
+      font-size: 0.95rem;
+    }
+
+    .cta {
+      margin: 5rem 0;
+      text-align: center;
+    }
+
+    .cta-content {
+      padding: 4rem 2rem;
+      background: linear-gradient(135deg, var(--color-accent), var(--color-purple));
+      border-radius: var(--border-radius);
+      color: white;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .cta-content h3 {
+      color: white;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .cta-content p {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 1.15rem;
+      margin-bottom: 2rem;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .button, .button-secondary {
+      display: inline-block;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s var(--ease-out-expo);
+      text-decoration: none;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .button {
+      background: white;
+      color: var(--color-accent);
+    }
+
+    .button:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+      text-decoration: none;
+    }
+
+    .button-secondary {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+    }
+
+    .button-secondary:hover {
+      background: white;
+      color: var(--color-accent);
+      text-decoration: none;
+      transform: translateY(-2px) scale(1.02);
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 2rem 0;
+      }
+
+      .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+
+      .section-number {
+        font-size: 2rem;
+      }
+
+      .impact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .philosophy {
+        padding: 2rem 1.5rem;
+      }
+
+      .principles {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-content {
+        padding: 3rem 1.5rem;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .button, .button-secondary {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+  </style>
+</BaseLayout>

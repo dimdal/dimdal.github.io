@@ -89,8 +89,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <h3>Let's Connect</h3>
       <p>Interested in discussing product leadership, AI innovation, or B2B SaaS growth?</p>
       <div class="cta-buttons">
-        <a href="/about" class="button">View Full Experience</a>
-        <a href="/contact" class="button-secondary">Get In Touch</a>
+        <a href="/about" class="button">
+          <span>View Full Experience</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+        <a href="/contact" class="button-secondary">
+          <span>Get In Touch</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
       </div>
     </div>
   </section>
@@ -122,18 +134,25 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       padding: 4rem 0;
       margin-bottom: 1rem;
       position: relative;
+      max-width: 85%;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        max-width: 100%;
+      }
     }
 
     .hero-badge {
       display: inline-block;
       padding: 0.5rem 1rem;
-      background: linear-gradient(135deg, var(--color-accent), var(--color-purple));
+      background: var(--color-accent);
       color: white;
       font-size: 0.85rem;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.05em;
-      border-radius: 6px;
+      border-radius: 0;
       margin-bottom: 1.5rem;
       animation: slideInUp 0.6s var(--ease-out-expo);
     }
@@ -172,11 +191,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     }
 
     .section-number {
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Bricolage Grotesque', sans-serif;
       font-size: 3rem;
-      font-weight: 700;
-      color: var(--color-border);
+      font-weight: 800;
+      color: var(--color-text-lighter);
       line-height: 1;
+      opacity: 0.4;
+      transition: all 0.3s var(--ease-out-expo);
+    }
+
+    .section-header:hover .section-number {
+      opacity: 0.8;
+      transform: translateX(-4px);
     }
 
     .section-header h2 {
@@ -195,25 +221,45 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     }
 
     .impact-card {
-      padding: 1.75rem;
-      background: white;
-      border-radius: var(--border-radius);
-      border: 1px solid var(--color-border);
-      box-shadow: var(--shadow-sm);
-      transition: all 0.3s var(--ease-out-expo);
+      padding: 2rem 0;
+      background: transparent;
+      border-radius: 0;
+      border: none;
+      border-bottom: 2px solid var(--color-border);
+      box-shadow: none;
+      transition: all 0.4s var(--ease-out-expo);
       animation: scaleIn 0.6s var(--ease-out-expo) both;
+      position: relative;
+    }
+
+    .impact-card::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--color-accent), var(--color-accent-secondary));
+      transition: width 0.5s var(--ease-out-expo);
     }
 
     .impact-card:hover {
-      transform: translateY(-8px) rotate(-0.5deg);
-      box-shadow: var(--shadow-lg);
-      border-color: var(--color-accent);
+      transform: translateX(12px) rotate(0.5deg);
+    }
+
+    .impact-card:hover::after {
+      width: 100%;
     }
 
     .card-icon {
       font-size: 2.5rem;
       margin-bottom: 1rem;
       display: inline-block;
+      transition: all 0.4s var(--ease-spring);
+    }
+
+    .impact-card:hover .card-icon {
+      transform: scale(1.15) rotate(-5deg);
     }
 
     .impact-card h3 {
@@ -249,10 +295,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     .philosophy {
       margin-bottom: 6rem;
-      padding: 3rem;
-      background: linear-gradient(135deg, rgba(37, 99, 235, 0.03), rgba(139, 92, 246, 0.03));
-      border-radius: var(--border-radius);
-      border: 1px solid var(--color-border);
+      padding: 3rem 0;
+      background: transparent;
+      border-radius: 0;
+      border: none;
+      border-top: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
     }
 
     .philosophy-text {
@@ -274,13 +322,36 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     }
 
     .principle {
-      padding: 1.5rem;
-      background: white;
-      border-radius: 8px;
-      border-left: 3px solid var(--color-accent);
+      padding: 1.5rem 0;
+      background: transparent;
+      border-radius: 0;
+      border-left: 2px solid var(--color-border);
+      padding-left: 1.5rem;
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
+      transition: all 0.4s var(--ease-out-expo);
+      position: relative;
+    }
+
+    .principle::before {
+      content: '';
+      position: absolute;
+      left: -2px;
+      top: 0;
+      width: 2px;
+      height: 0;
+      background: linear-gradient(180deg, var(--color-accent), var(--color-accent-secondary));
+      transition: height 0.4s var(--ease-out-expo);
+    }
+
+    .principle:hover {
+      transform: translateX(8px);
+      border-left-color: transparent;
+    }
+
+    .principle:hover::before {
+      height: 100%;
     }
 
     .principle strong {
@@ -300,21 +371,22 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     }
 
     .cta-content {
-      padding: 4rem 2rem;
-      background: linear-gradient(135deg, var(--color-accent), var(--color-purple));
-      border-radius: var(--border-radius);
-      color: white;
-      box-shadow: var(--shadow-lg);
+      padding: 4rem 0;
+      background: transparent;
+      border-radius: 0;
+      color: var(--color-text);
+      box-shadow: none;
+      border-top: 1px solid var(--color-border);
     }
 
     .cta-content h3 {
-      color: white;
+      color: var(--color-text);
       font-size: 2rem;
       margin-bottom: 1rem;
     }
 
     .cta-content p {
-      color: rgba(255, 255, 255, 0.9);
+      color: var(--color-text-light);
       font-size: 1.15rem;
       margin-bottom: 2rem;
     }
@@ -327,39 +399,75 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     }
 
     .button, .button-secondary {
-      display: inline-block;
-      padding: 1rem 2rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 1.75rem;
       border-radius: 8px;
       font-weight: 600;
       font-size: 1rem;
-      transition: all 0.3s var(--ease-out-expo);
+      transition: all 0.4s var(--ease-out-expo);
       text-decoration: none;
       cursor: pointer;
       position: relative;
+      overflow: hidden;
+    }
+
+    .button svg, .button-secondary svg {
+      transition: transform 0.4s var(--ease-out-expo);
     }
 
     .button {
-      background: white;
-      color: var(--color-accent);
+      background: var(--color-accent);
+      color: white;
+      border: 2px solid var(--color-accent);
+    }
+
+    .button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s ease;
     }
 
     .button:hover {
-      transform: translateY(-2px) scale(1.02);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+      transform: translateY(-3px);
+      background: var(--color-accent-hover);
+      border-color: var(--color-accent-hover);
+      color: white;
       text-decoration: none;
+      box-shadow: 0 8px 20px -4px rgba(232, 93, 84, 0.3);
+    }
+
+    .button:hover::before {
+      left: 100%;
+    }
+
+    .button:hover svg {
+      transform: translateX(4px);
     }
 
     .button-secondary {
       background: transparent;
-      color: white;
-      border: 2px solid white;
+      color: var(--color-text);
+      border: 2px solid var(--color-border);
     }
 
     .button-secondary:hover {
-      background: white;
-      color: var(--color-accent);
+      background: var(--color-text);
+      color: var(--color-bg);
+      border-color: var(--color-text);
       text-decoration: none;
-      transform: translateY(-2px) scale(1.02);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px -4px rgba(24, 24, 27, 0.2);
+    }
+
+    .button-secondary:hover svg {
+      transform: translateX(4px);
     }
 
     @media (max-width: 768px) {

@@ -1,9 +1,8 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import { defaultLang } from '../i18n/translations';
-import { useTranslations } from '../i18n/utils';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { useTranslations } from '../../i18n/utils';
 
-const lang = defaultLang;
+const lang = 'en';
 const t = useTranslations(lang);
 ---
 

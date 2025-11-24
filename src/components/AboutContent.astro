@@ -1,0 +1,957 @@
+---
+import { useTranslations } from '../i18n/utils';
+import type { Language } from '../i18n/translations';
+
+interface Props {
+  lang: Language;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<div class="page-header">
+  <h1 set:html={t('about.title')}></h1>
+  <p class="subtitle" set:html={t('about.subtitle')}></p>
+</div>
+
+<section class="summary">
+  <div class="summary-content">
+    <p class="lead" set:html={t('about.summary.lead')}></p>
+    <p set:html={t('about.summary.p1')}></p>
+    <p set:html={t('about.summary.p2')}></p>
+  </div>
+</section>
+
+<section class="experience">
+  <div class="section-header">
+    <span class="section-number">01</span>
+    <h2 set:html={t('about.experience.title')}></h2>
+  </div>
+
+  <div class="timeline">
+    <div class="job">
+      <div class="job-marker">
+        <div class="job-dot"></div>
+      </div>
+      <div class="job-content">
+        <div class="job-header">
+          <div class="job-title-row">
+            <h3 set:html={t('about.experience.vp.title')}></h3>
+            <span class="period" set:html={t('about.experience.vp.period')}></span>
+          </div>
+          <div class="company-row">
+            <div class="company-info">
+              <img src="/images/logos/timely.png" alt="Timely" class="company-logo" />
+              <span class="company" set:html={t('common.timely')}></span>
+            </div>
+            <span class="job-badge" set:html={t('common.leadership')}></span>
+          </div>
+        </div>
+        <p class="job-subtitle" set:html={t('about.experience.vp.subtitle')}></p>
+        <ul class="job-list">
+          <li set:html={t('about.experience.vp.1')}></li>
+          <li set:html={t('about.experience.vp.2')}></li>
+          <li set:html={t('about.experience.vp.3')}></li>
+        </ul>
+        <ul class="job-list job-list-hidden" data-expandable>
+          <li set:html={t('about.experience.vp.4')}></li>
+          <li set:html={t('about.experience.vp.5')}></li>
+          <li set:html={t('about.experience.vp.6')}></li>
+          <li set:html={t('about.experience.vp.7')}></li>
+        </ul>
+        <button class="expand-btn" data-toggle set:html={t('common.showMore')}></button>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="job-marker">
+        <div class="job-dot"></div>
+      </div>
+      <div class="job-content">
+        <div class="job-header">
+          <div class="job-title-row">
+            <h3 set:html={t('about.experience.interim.title')}></h3>
+            <span class="period" set:html={t('about.experience.interim.period')}></span>
+          </div>
+          <div class="company-row">
+            <div class="company-info">
+              <img src="/images/logos/timely.png" alt="Timely" class="company-logo" />
+              <span class="company" set:html={t('common.timely')}></span>
+            </div>
+            <span class="job-badge" set:html={t('common.engineering')}></span>
+          </div>
+        </div>
+        <p class="job-subtitle" set:html={t('about.experience.interim.subtitle')}></p>
+        <ul class="job-list">
+          <li set:html={t('about.experience.interim.1')}></li>
+          <li set:html={t('about.experience.interim.2')}></li>
+        </ul>
+        <ul class="job-list job-list-hidden" data-expandable>
+          <li set:html={t('about.experience.interim.3')}></li>
+          <li set:html={t('about.experience.interim.4')}></li>
+        </ul>
+        <button class="expand-btn" data-toggle set:html={t('common.showMore')}></button>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="job-marker">
+        <div class="job-dot"></div>
+      </div>
+      <div class="job-content">
+        <div class="job-header">
+          <div class="job-title-row">
+            <h3 set:html={t('about.experience.growth.title')}></h3>
+            <span class="period" set:html={t('about.experience.growth.period')}></span>
+          </div>
+          <div class="company-row">
+            <div class="company-info">
+              <img src="/images/logos/timely.png" alt="Timely" class="company-logo" />
+              <span class="company" set:html={t('common.timely')}></span>
+            </div>
+            <span class="job-badge" set:html={t('common.growth')}></span>
+          </div>
+        </div>
+        <p class="job-subtitle" set:html={t('about.experience.growth.subtitle')}></p>
+        <ul class="job-list">
+          <li set:html={t('about.experience.growth.1')}></li>
+          <li set:html={t('about.experience.growth.2')}></li>
+          <li set:html={t('about.experience.growth.3')}></li>
+          <li set:html={t('about.experience.growth.4')}></li>
+        </ul>
+        <ul class="job-list job-list-hidden" data-expandable>
+          <li set:html={t('about.experience.growth.5')}></li>
+          <li set:html={t('about.experience.growth.6')}></li>
+          <li set:html={t('about.experience.growth.7')}></li>
+          <li set:html={t('about.experience.growth.8')}></li>
+        </ul>
+        <button class="expand-btn" data-toggle set:html={t('common.showMore')}></button>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="job-marker">
+        <div class="job-dot"></div>
+      </div>
+      <div class="job-content">
+        <div class="job-header">
+          <div class="job-title-row">
+            <h3 set:html={t('about.experience.moonwalk.title')}></h3>
+            <span class="period" set:html={t('about.experience.moonwalk.period')}></span>
+          </div>
+          <div class="company-row">
+            <div class="company-info">
+              <span class="company">Moonwalk</span>
+            </div>
+            <span class="job-badge" set:html={t('about.experience.moonwalk.badge')}></span>
+          </div>
+        </div>
+        <ul class="job-list">
+          <li set:html={t('about.experience.moonwalk.1')}></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="job-marker">
+        <div class="job-dot"></div>
+      </div>
+      <div class="job-content">
+        <div class="job-header">
+          <div class="job-title-row">
+            <h3 set:html={t('about.experience.jernia.title')}></h3>
+            <span class="period" set:html={t('about.experience.jernia.period')}></span>
+          </div>
+          <div class="company-row">
+            <div class="company-info">
+              <img src="/images/logos/jernia.png" alt="Jernia logo" class="company-logo" />
+              <span class="company">Jernia</span>
+            </div>
+            <span class="job-badge" set:html={t('about.experience.jernia.badge')}></span>
+          </div>
+        </div>
+        <ul class="job-list">
+          <li set:html={t('about.experience.jernia.1')}></li>
+          <li set:html={t('about.experience.jernia.2')}></li>
+        </ul>
+        <ul class="job-list job-list-hidden" data-expandable>
+          <li set:html={t('about.experience.jernia.3')}></li>
+        </ul>
+        <button class="expand-btn" data-toggle set:html={t('common.showMore')}></button>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="job-marker">
+        <div class="job-dot"></div>
+      </div>
+      <div class="job-content">
+        <div class="job-header">
+          <div class="job-title-row">
+            <h3 set:html={t('about.experience.komplett.title')}></h3>
+            <span class="period" set:html={t('about.experience.komplett.period')}></span>
+          </div>
+          <div class="company-row">
+            <div class="company-info">
+              <img src="/images/logos/komplett.png" alt="Komplett Group" class="company-logo" />
+              <span class="company">Komplett Group</span>
+            </div>
+            <span class="job-badge" set:html={t('about.experience.komplett.badge')}></span>
+          </div>
+        </div>
+        <ul class="job-list">
+          <li set:html={t('about.experience.komplett.1')}></li>
+          <li set:html={t('about.experience.komplett.2')}></li>
+        </ul>
+        <ul class="job-list job-list-hidden" data-expandable>
+          <li set:html={t('about.experience.komplett.3')}></li>
+        </ul>
+        <button class="expand-btn" data-toggle set:html={t('common.showMore')}></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="skills">
+  <div class="section-header">
+    <span class="section-number">02</span>
+    <h2 set:html={t('about.skills.title')}></h2>
+  </div>
+
+  <div class="skills-grid">
+    <div class="skill-category">
+      <div class="skill-icon">💼</div>
+      <h3 set:html={t('about.skills.product.title')}></h3>
+      <div class="skill-tags">
+        <span class="tag" set:html={t('about.skills.product.strategy')}></span>
+        <span class="tag" set:html={t('about.skills.product.plg')}></span>
+        <span class="tag" set:html={t('about.skills.product.leadership')}></span>
+        <span class="tag" set:html={t('about.skills.product.delay')}></span>
+        <span class="tag" set:html={t('about.skills.product.discovery')}></span>
+        <span class="tag" set:html={t('about.skills.product.remote')}></span>
+        <span class="tag" set:html={t('about.skills.product.coaching')}></span>
+      </div>
+    </div>
+
+    <div class="skill-category">
+      <div class="skill-icon">⚡</div>
+      <h3 set:html={t('about.skills.tech.title')}></h3>
+      <div class="skill-tags">
+        <span class="tag" set:html={t('about.skills.tech.ml')}></span>
+        <span class="tag" set:html={t('about.skills.tech.llm')}></span>
+        <span class="tag" set:html={t('about.skills.tech.ai')}></span>
+        <span class="tag" set:html={t('about.skills.tech.analytics')}></span>
+        <span class="tag" set:html={t('about.skills.tech.testing')}></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="education">
+  <div class="section-header">
+    <span class="section-number">03</span>
+    <h2 set:html={t('about.education.title')}></h2>
+  </div>
+
+  <div class="education-grid">
+    <div class="education-item">
+      <strong set:html={t('about.education.bi')}></strong>
+      <span set:html={t('about.education.bi.desc')}></span>
+    </div>
+    <div class="education-item">
+      <strong set:html={t('about.education.stanford')}></strong>
+      <span set:html={t('about.education.stanford.desc')}></span>
+    </div>
+    <div class="education-item">
+      <strong set:html={t('about.education.deeplearning')}></strong>
+      <span set:html={t('about.education.deeplearning.desc')}></span>
+    </div>
+    <div class="education-item">
+      <strong set:html={t('about.education.coursera')}></strong>
+      <span set:html={t('about.education.coursera.desc')}></span>
+    </div>
+    <div class="education-item">
+      <strong set:html={t('about.education.udacity')}></strong>
+      <span set:html={t('about.education.udacity.desc')}></span>
+    </div>
+    <div class="education-item">
+      <strong set:html={t('about.education.amplitude')}></strong>
+      <span set:html={t('about.education.amplitude.desc')}></span>
+    </div>
+  </div>
+</section>
+
+<section class="media">
+  <div class="section-header">
+    <span class="section-number">04</span>
+    <h2 set:html={t('about.media.title')}></h2>
+  </div>
+
+  <div class="media-grid">
+    <a href="https://techcrunch.com/2021/06/22/memory-ai-the-startup-behind-time-tracking-app-timely-raises-14m-to-build-more-ai-based-productivity-apps/" target="_blank" rel="noopener noreferrer" class="media-item">
+      <div class="media-logo">
+        <svg viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+          <text x="10" y="40" font-family="'Franklin Gothic Medium', sans-serif" font-size="32" font-weight="700" fill="#0a9e00">TechCrunch</text>
+        </svg>
+      </div>
+      <div class="media-content">
+        <h3 set:html={t('about.media.tc1.title')}></h3>
+        <p class="media-date" set:html={t('about.media.tc1.date')}></p>
+        <p class="media-excerpt" set:html={t('about.media.tc1.excerpt')}></p>
+      </div>
+    </a>
+
+    <a href="https://www.kode24.no/artikkel/timely-forer-timer-automatisk-med-ai/128674" target="_blank" rel="noopener noreferrer" class="media-item">
+      <div class="media-logo">
+        <svg viewBox="0 0 160 60" xmlns="http://www.w3.org/2000/svg">
+          <text x="10" y="40" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#00a9e0">Kode24</text>
+        </svg>
+      </div>
+      <div class="media-content">
+        <h3 set:html={t('about.media.kode24.title')}></h3>
+        <p class="media-date" set:html={t('about.media.kode24.date')}></p>
+        <p class="media-excerpt" set:html={t('about.media.kode24.excerpt')}></p>
+      </div>
+    </a>
+
+    <a href="https://techcrunch.com/2018/10/17/memory-timely/" target="_blank" rel="noopener noreferrer" class="media-item">
+      <div class="media-logo">
+        <svg viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+          <text x="10" y="40" font-family="'Franklin Gothic Medium', sans-serif" font-size="32" font-weight="700" fill="#0a9e00">TechCrunch</text>
+        </svg>
+      </div>
+      <div class="media-content">
+        <h3 set:html={t('about.media.tc2.title')}></h3>
+        <p class="media-date" set:html={t('about.media.tc2.date')}></p>
+        <p class="media-excerpt" set:html={t('about.media.tc2.excerpt')}></p>
+      </div>
+    </a>
+
+    <a href="https://podtail.com/no/podcast/vekst/marius-orvik-head-of-growth-i-memory-timely-vekste/" target="_blank" rel="noopener noreferrer" class="media-item">
+      <div class="media-logo media-logo-podcast">
+        <div class="podcast-icon">🎙️</div>
+      </div>
+      <div class="media-content">
+        <h3 set:html={t('about.media.podcast.title')}></h3>
+        <p class="media-date" set:html={t('about.media.podcast.date')}></p>
+        <p class="media-excerpt" set:html={t('about.media.podcast.excerpt')}></p>
+      </div>
+    </a>
+
+    <a href="https://www.innomag.no/finansierer-morgendagens-arbeidsplasser-gjennom-crowdfunding/" target="_blank" rel="noopener noreferrer" class="media-item">
+      <div class="media-logo">
+        <svg viewBox="0 0 160 60" xmlns="http://www.w3.org/2000/svg">
+          <text x="10" y="40" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#0066cc">Innomag</text>
+        </svg>
+      </div>
+      <div class="media-content">
+        <h3 set:html={t('about.media.innomag.title')}></h3>
+        <p class="media-date" set:html={t('about.media.innomag.date')}></p>
+        <p class="media-excerpt" set:html={t('about.media.innomag.excerpt')}></p>
+      </div>
+    </a>
+
+    <a href="https://netthandel.no/artikler-det-viktigste-er-at-kundene-handler-hos-jernia-380313/" target="_blank" rel="noopener noreferrer" class="media-item">
+      <div class="media-logo">
+        <svg viewBox="0 0 180 60" xmlns="http://www.w3.org/2000/svg">
+          <text x="10" y="40" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#333">Netthandel.no</text>
+        </svg>
+      </div>
+      <div class="media-content">
+        <h3 set:html={t('about.media.netthandel.title')}></h3>
+        <p class="media-date" set:html={t('about.media.netthandel.date')}></p>
+        <p class="media-excerpt" set:html={t('about.media.netthandel.excerpt')}></p>
+      </div>
+    </a>
+
+    <a href="https://www.retailmagasinet.no/jernia-med-ny-netthandelslosning/456337" target="_blank" rel="noopener noreferrer" class="media-item">
+      <div class="media-logo">
+        <svg viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+          <text x="10" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#e31e24">Retail Magasinet</text>
+        </svg>
+      </div>
+      <div class="media-content">
+        <h3 set:html={t('about.media.retail.title')}></h3>
+        <p class="media-date" set:html={t('about.media.retail.date')}></p>
+        <p class="media-excerpt" set:html={t('about.media.retail.excerpt')}></p>
+      </div>
+    </a>
+  </div>
+</section>
+
+<script define:vars={{ showMore: t('common.showMore'), showLess: t('common.showLess') }}>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggleButtons = document.querySelectorAll('[data-toggle]');
+
+    toggleButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const jobContent = button.closest('.job-content');
+        const hiddenList = jobContent?.querySelector('[data-expandable]');
+
+        if (hiddenList) {
+          const isExpanded = hiddenList.classList.contains('expanded');
+
+          if (isExpanded) {
+            hiddenList.classList.remove('expanded');
+            button.classList.remove('expanded');
+            button.textContent = showMore;
+          } else {
+            hiddenList.classList.add('expanded');
+            button.classList.add('expanded');
+            button.textContent = showLess;
+          }
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  .page-header {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid var(--color-border);
+  }
+
+  .page-header h1 {
+    margin-bottom: 0.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.25rem;
+    color: var(--color-text-light);
+    margin: 0;
+  }
+
+  .summary {
+    margin-bottom: 5rem;
+  }
+
+  .summary-content {
+    padding: 2.5rem 0;
+    background: transparent;
+    border-radius: 0;
+    border-left: 2px solid var(--color-accent);
+    padding-left: 2rem;
+  }
+
+  .summary p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+    color: var(--color-text-light);
+  }
+
+  .summary p:last-child {
+    margin-bottom: 0;
+  }
+
+  .summary .lead {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  .summary strong {
+    color: var(--color-text);
+    font-weight: 600;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .section-number {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--color-text-lighter);
+    line-height: 1;
+    opacity: 0.4;
+    transition: all 0.3s var(--ease-out-expo);
+  }
+
+  .section-header:hover .section-number {
+    opacity: 0.8;
+    transform: translateX(-4px);
+  }
+
+  .section-header h2 {
+    margin: 0;
+  }
+
+  .experience {
+    margin-bottom: 5rem;
+  }
+
+  .timeline {
+    position: relative;
+    padding-left: 2rem;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--color-accent);
+  }
+
+  .job {
+    position: relative;
+    margin-bottom: 3rem;
+    display: flex;
+    gap: 2rem;
+  }
+
+  .job:last-child {
+    margin-bottom: 0;
+  }
+
+  .job-marker {
+    position: absolute;
+    left: -2rem;
+    top: 0;
+  }
+
+  .job-dot {
+    width: 16px;
+    height: 16px;
+    background: white;
+    border: 3px solid var(--color-accent);
+    border-radius: 50%;
+    position: relative;
+    left: -7px;
+  }
+
+  .job-content {
+    flex: 1;
+    padding: 2rem 0;
+    background: transparent;
+    border-radius: 0;
+    border: none;
+    border-bottom: 2px solid var(--color-border);
+    box-shadow: none;
+    transition: all 0.4s var(--ease-out-expo);
+    position: relative;
+  }
+
+  .job-content::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-accent-secondary));
+    transition: width 0.5s var(--ease-out-expo);
+  }
+
+  .job-content:hover {
+    transform: translateX(8px) rotate(0.3deg);
+  }
+
+  .job-content:hover::after {
+    width: 100%;
+  }
+
+  .job-header {
+    margin-bottom: 1rem;
+  }
+
+  .job-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .job-header h3 {
+    font-size: 1.4rem;
+    margin: 0;
+    color: var(--color-text);
+  }
+
+  .period {
+    color: var(--color-text-lighter);
+    font-size: 0.9rem;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .company-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .company-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .company-logo {
+    height: 28px;
+    width: auto;
+    display: block;
+  }
+
+  .company {
+    font-weight: 600;
+    color: var(--color-text);
+    font-size: 1.05rem;
+  }
+
+  .job-badge {
+    display: inline-block;
+    padding: 0.35rem 0.75rem;
+    background: transparent;
+    color: var(--color-accent);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: 0;
+    border: 1px solid var(--color-accent);
+  }
+
+  .job-subtitle {
+    font-style: italic;
+    color: var(--color-text-light);
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .job-list {
+    list-style: none;
+    margin-left: 0;
+    margin-bottom: 0;
+  }
+
+  .job-list-hidden {
+    display: none;
+    margin-top: 0;
+  }
+
+  .job-list-hidden.expanded {
+    display: block;
+  }
+
+  .expand-btn {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: transparent;
+    color: var(--color-accent);
+    border: 1px solid var(--color-accent);
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s var(--ease-out-expo);
+    font-family: inherit;
+  }
+
+  .expand-btn:hover {
+    background: var(--color-accent);
+    color: white;
+  }
+
+  .expand-btn.expanded {
+    background: var(--color-bg-alt);
+    border-color: var(--color-border);
+    color: var(--color-text-light);
+  }
+
+  .expand-btn.expanded:hover {
+    background: var(--color-border);
+    border-color: var(--color-border);
+  }
+
+  .job-content ul {
+    list-style: none;
+    margin-left: 0;
+  }
+
+  .job-content li {
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: 0.75rem;
+    color: var(--color-text-light);
+    line-height: 1.7;
+  }
+
+  .job-content li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+    font-weight: bold;
+  }
+
+  .skills {
+    margin-bottom: 5rem;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .skill-category {
+    padding: 2rem 0;
+    background: transparent;
+    border-radius: 0;
+    border: none;
+    border-bottom: 2px solid var(--color-border);
+    box-shadow: none;
+    transition: all 0.4s var(--ease-out-expo);
+    position: relative;
+  }
+
+  .skill-category::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-accent-secondary));
+    transition: width 0.5s var(--ease-out-expo);
+  }
+
+  .skill-category:hover {
+    transform: translateX(12px) rotate(0.5deg);
+  }
+
+  .skill-category:hover::after {
+    width: 100%;
+  }
+
+  .skill-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+    transition: all 0.4s var(--ease-spring);
+  }
+
+  .skill-category:hover .skill-icon {
+    transform: scale(1.15) rotate(-5deg);
+  }
+
+  .skill-category h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .tag {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: transparent;
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+    border-radius: 20px;
+    border: 1px solid var(--color-border);
+    transition: all 0.3s var(--ease-out-expo);
+    cursor: default;
+  }
+
+  .tag:hover {
+    background: var(--color-accent-secondary);
+    color: white;
+    border-color: var(--color-accent-secondary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px -2px rgba(59, 130, 246, 0.3);
+  }
+
+  .education {
+    margin-bottom: 5rem;
+  }
+
+  .education-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .education-item {
+    padding: 1.5rem 0;
+    padding-left: 1.5rem;
+    background: transparent;
+    border-radius: 0;
+    border-left: 2px solid var(--color-accent);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transition: all 0.3s var(--ease-out-expo);
+  }
+
+  .education-item:hover {
+    transform: translateX(4px);
+    border-left-color: var(--color-accent);
+  }
+
+  .education-item strong {
+    color: var(--color-text);
+    font-size: 1.05rem;
+    font-weight: 600;
+  }
+
+  .education-item span {
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .media {
+    margin-bottom: 5rem;
+  }
+
+  .media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+  }
+
+  .media-item {
+    padding: 2rem 0;
+    background: transparent;
+    border-radius: 0;
+    border: none;
+    border-bottom: 2px solid var(--color-border);
+    box-shadow: none;
+    transition: all 0.4s var(--ease-out-expo);
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .media-item::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-accent-secondary));
+    transition: width 0.5s var(--ease-out-expo);
+  }
+
+  .media-item:hover {
+    transform: translateX(12px) rotate(0.3deg);
+    text-decoration: none;
+  }
+
+  .media-item:hover::after {
+    width: 100%;
+  }
+
+  .media-logo {
+    height: 40px;
+    display: flex;
+    align-items: center;
+  }
+
+  .media-logo svg {
+    height: 100%;
+    width: auto;
+  }
+
+  .media-logo-podcast {
+    height: 50px;
+  }
+
+  .podcast-icon {
+    font-size: 2.5rem;
+    line-height: 1;
+  }
+
+  .media-content h3 {
+    font-size: 1.15rem;
+    color: var(--color-text);
+    margin: 0 0 0.5rem 0;
+    line-height: 1.4;
+  }
+
+  .media-date {
+    font-size: 0.85rem;
+    color: var(--color-text-lighter);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0 0 0.75rem 0;
+  }
+
+  .media-excerpt {
+    font-size: 0.95rem;
+    color: var(--color-text-light);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .timeline {
+      padding-left: 1.5rem;
+    }
+
+    .job {
+      gap: 1rem;
+    }
+
+    .job-content {
+      padding: 1.5rem;
+    }
+
+    .job-title-row {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .section-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .section-number {
+      font-size: 2rem;
+    }
+
+    .skills-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .education-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .media-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .media-item {
+      padding: 1.5rem;
+    }
+  }
+</style>

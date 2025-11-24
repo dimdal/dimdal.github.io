@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import AboutContent from '../../components/AboutContent.astro';
+import { useTranslations } from '../../i18n/utils';
+
+const lang = 'en';
+const t = useTranslations(lang);
+---
+
+<BaseLayout title={`${t('about.title')} - Marius Ørvik`} description={t('about.subtitle')}>
+  <AboutContent lang={lang} />
+</BaseLayout>

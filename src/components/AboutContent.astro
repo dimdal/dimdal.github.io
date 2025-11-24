@@ -381,30 +381,42 @@ const t = useTranslations(lang);
 </section>
 
 <script define:vars={{ showMore: t('common.showMore'), showLess: t('common.showLess') }}>
-  document.addEventListener('DOMContentLoaded', () => {
+  function handleToggleClick(event) {
+    const button = event.currentTarget;
+    const jobContent = button.closest('.job-content');
+    const hiddenList = jobContent?.querySelector('[data-expandable]');
+
+    if (hiddenList) {
+      const isExpanded = hiddenList.classList.contains('expanded');
+
+      if (isExpanded) {
+        hiddenList.classList.remove('expanded');
+        button.classList.remove('expanded');
+        button.textContent = showMore;
+      } else {
+        hiddenList.classList.add('expanded');
+        button.classList.add('expanded');
+        button.textContent = showLess;
+      }
+    }
+  }
+
+  function initExpandButtons() {
     const toggleButtons = document.querySelectorAll('[data-toggle]');
 
     toggleButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const jobContent = button.closest('.job-content');
-        const hiddenList = jobContent?.querySelector('[data-expandable]');
-
-        if (hiddenList) {
-          const isExpanded = hiddenList.classList.contains('expanded');
-
-          if (isExpanded) {
-            hiddenList.classList.remove('expanded');
-            button.classList.remove('expanded');
-            button.textContent = showMore;
-          } else {
-            hiddenList.classList.add('expanded');
-            button.classList.add('expanded');
-            button.textContent = showLess;
-          }
-        }
-      });
+      // Remove old listener if exists
+      button.removeEventListener('click', handleToggleClick);
+      // Add new listener
+      button.addEventListener('click', handleToggleClick);
     });
-  });
+  }
+
+  // Run on initial load
+  document.addEventListener('DOMContentLoaded', initExpandButtons);
+
+  // Run after view transitions
+  document.addEventListener('astro:after-swap', initExpandButtons);
 </script>
 
 <style>

@@ -206,20 +206,20 @@ export const translations = {
 
     // Home page
     'home.badge': 'VP Product & Engineering',
-    'home.tagline': 'Scaling B2B SaaS through AI-Driven Innovation',
-    'home.intro': '<strong>10+ years of product leadership</strong> driving <strong>multi-million ARR growth</strong> in B2B SaaS. Track record of uniting Product, Engineering, and Design to deliver measurable business impact through AI/ML innovation and operational excellence.',
+    'home.tagline': 'Scaling B2B SaaS through AI-driven product development',
+    'home.intro': '<strong>Product leader with over 10 years of experience</strong> in B2B SaaS. Building strong Product, Engineering, and Design teams and delivering tangible business results through AI innovation and targeted operational improvements.',
 
     // Leadership Impact
     'home.impact.title': 'Leadership Impact',
     'home.impact.executive.title': 'Executive Impact',
-    'home.impact.executive.1': '<strong>Executive Leadership Team</strong> member reporting to CEO with end-to-end ownership of product strategy, discovery, delivery, and performance across <strong>5,000+ businesses</strong>',
-    'home.impact.executive.2': 'Key contributor in <strong>three funding rounds raising $20M total</strong>, scaling Timely through product-led growth',
-    'home.impact.executive.3': 'Led distributed teams across <strong>Europe and Americas</strong> with async-first operating model',
+    'home.impact.executive.1': '<strong>Executive Leadership Team</strong> member with responsibility for the entire product function — the product domain — strategy, insights, delivery, and results for <strong>over 5,000 businesses</strong>',
+    'home.impact.executive.2': 'Key contributor in <strong>three funding rounds that secured $20M</strong>, scaling Timely through product-led growth',
+    'home.impact.executive.3': 'Leading distributed teams in Europe, Asia, and the USA with an efficient, asynchronous collaboration model',
 
     'home.impact.ai.title': 'AI & Innovation',
-    'home.impact.ai.1': 'Founded <strong>AI/ML team from scratch</strong>, establishing competitive moat through proprietary dataset',
-    'home.impact.ai.2': 'Completed advanced ML coursework (Stanford, deeplearning.ai) to <strong>lead product design of pipeline</strong> using neural networks, SVMs, and LLMs',
-    'home.impact.ai.3': 'Translated complex ML capabilities into user-facing features for <strong>5,000+ clients</strong>',
+    'home.impact.ai.1': 'Built <strong>AI/ML team from the ground up</strong> and created lasting competitive advantages through proprietary datasets',
+    'home.impact.ai.2': 'Completed advanced ML programs (Stanford, deeplearning.ai) and led product design of systems based on neural networks, SVMs, and LLMs',
+    'home.impact.ai.3': 'Made advanced ML understandable and useful through intuitive features used by more than <strong>5,000 customers</strong>',
 
     'home.impact.team.title': 'Team & Systems',
     'home.impact.team.1': 'Identified and developed PMs from <strong>non-traditional backgrounds</strong>: Marketing, Support, QA → senior product roles',
@@ -228,13 +228,13 @@ export const translations = {
 
     // Philosophy
     'home.philosophy.title': 'Approach & Philosophy',
-    'home.philosophy.text': 'I build <strong>high-trust, outcome-driven organizations</strong> that balance autonomy with alignment. My leadership style combines strategic vision with deep product craft, prioritizing clarity, evidence-based decision-making, and creating environments where great teams do their best work. Experienced scaling from small teams to distributed organizations, adapting leadership approach to company stage and complexity.',
+    'home.philosophy.text': 'I build teams with <strong>high trust, clear goals, and a high degree of autonomy</strong>. My leadership style combines strategic direction with deep product expertise, and I prioritize clarity, insight-based decisions, and rapid learning.',
     'home.philosophy.plg': 'Product-Led Growth',
-    'home.philosophy.plg.desc': 'PLG experimentation driving sustainable ARR',
-    'home.philosophy.evidence': 'Evidence-Based',
-    'home.philosophy.evidence.desc': 'Data-informed prioritization frameworks',
-    'home.philosophy.team': 'Team Empowerment',
-    'home.philosophy.team.desc': 'Autonomous teams owning outcomes',
+    'home.philosophy.plg.desc': 'The product must be the engine for sustainable growth, sales and marketing are the rockets',
+    'home.philosophy.evidence': 'Insight-driven',
+    'home.philosophy.evidence.desc': 'I use data and insights to prioritize correctly, not speculation and gut feeling',
+    'home.philosophy.team': 'Empowered Teams',
+    'home.philosophy.team.desc': 'Autonomous teams that own the results both thrive better and deliver better results',
 
     // CTA
     'home.cta.title': 'Let\'s Connect',
@@ -245,9 +245,9 @@ export const translations = {
     // About page
     'about.title': 'About Me',
     'about.subtitle': 'Building products that drive measurable business impact',
-    'about.summary.lead': 'My career spans <strong>B2B SaaS, e-commerce, and startup leadership</strong>, with deep expertise in product-led growth, AI/ML product development, and scaling distributed teams.',
-    'about.summary.p1': 'Started in digital marketing at major e-commerce companies, transitioned to product leadership at <strong>Timely</strong> where I\'ve spent nearly a decade building the company from early traction into a global SaaS platform. Currently leading as VP Product & Engineering, unifying product strategy and engineering execution across distributed product and engineering teams.',
-    'about.summary.p2': '<strong>Deep technical fluency</strong> enabling effective engineering collaboration and product decisions. Leverage modern tools including LLM-assisted workflows for rapid prototyping and product validation. Balance strategic leadership with product craft.',
+    'about.summary.lead': 'I have a background in <strong>B2B SaaS, e-commerce, and startup leadership</strong>, with deep expertise in product-led growth, AI/ML-driven product development, and scaling distributed teams.',
+    'about.summary.p1': 'My career started in digital marketing for major e-commerce companies before I moved into product leadership at <strong>Timely</strong>. There I have spent nearly a decade building the company from early traction into a global SaaS platform. In my role as VP Product & Engineering, I unite product strategy and technical execution across distributed teams.',
+    'about.summary.p2': 'I have solid technical understanding that strengthens collaboration with engineering and improves product decisions. I use modern tools, including LLM-assisted workflows, for rapid prototypes and efficient validation. Combine strategic direction with hands-on product work when required.',
 
     'about.experience.title': 'Professional Experience',
     'about.experience.vp.title': 'VP Product & Engineering',
@@ -322,10 +322,10 @@ export const translations = {
     'about.education.title': 'Education & Professional Development',
     'about.education.bi': 'BI Norwegian Business School',
     'about.education.bi.desc': 'Specialization in Marketing and Management from a \'Triple Crown\' accredited institution in the top 1% of business schools worldwide',
-    'about.education.stanford': 'Stanford University (MOOC)',
-    'about.education.stanford.desc': 'Machine Learning by Andrew Ng',
+    'about.education.stanford': 'Stanford University',
+    'about.education.stanford.desc': 'Machine Learning (MOOC) by Andrew Ng: Solid foundation in modern ML and practical model development taught by one of the world\'s leading experts in artificial intelligence',
     'about.education.deeplearning': 'DeepLearning.AI',
-    'about.education.deeplearning.desc': 'Neural Networks and Deep Learning',
+    'about.education.deeplearning.desc': 'Neural Networks and Deep Learning; Modern neural networks, backpropagation, and deep learning, with focus on practical model building and understanding of underlying mathematics',
     'about.education.coursera': 'Coursera',
     'about.education.coursera.desc': 'NLP with Classification and Vector Spaces; Linear Algebra for Machine Learning',
     'about.education.udacity': 'Udacity',
@@ -370,7 +370,7 @@ export const translations = {
     'contact.email': 'Email',
     'contact.linkedin': 'LinkedIn',
     'contact.location': 'Location',
-    'contact.location.text': 'Porsgrunn, Greater Oslo Area<br/> Norway',
+    'contact.location.text': 'Porsgrunn, Telemark',
 
     // Footer
     'footer.title': 'Let\'s Work Together',

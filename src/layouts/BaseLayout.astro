@@ -27,9 +27,59 @@ const togglePath = toggleLang === defaultLang ? pathWithoutLang : `/${toggleLang
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content={description}>
+  <meta name="geo.region" content="NO-03">
+  <meta name="geo.placename" content="Oslo">
+  <meta name="geo.position" content="59.9139;10.7522">
   <title>{title}</title>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <ViewTransitions />
+  <script type="application/ld+json" is:inline set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Marius Ørvik",
+    "alternateName": ["Marius Orvik"],
+    "jobTitle": lang === 'no' ? "VP Product & Engineering" : "VP Product & Engineering",
+    "description": lang === 'no'
+      ? "Produktleder med over 10 års erfaring i B2B SaaS, AI-innovasjon og produktledet vekst"
+      : "Product leader with over 10 years of experience in B2B SaaS, AI innovation, and product-led growth",
+    "url": "https://mariusorvik.com",
+    "sameAs": [
+      "https://linkedin.com/in/mariusorvik",
+      "https://github.com/dimdal"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Oslo",
+      "addressRegion": "Oslo",
+      "addressCountry": "NO"
+    },
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Timely",
+      "url": "https://timelyapp.com"
+    },
+    "knowsAbout": [
+      "Product Management",
+      "Produktledelse",
+      "AI Product Development",
+      "Machine Learning",
+      "B2B SaaS",
+      "Product-Led Growth",
+      "Engineering Leadership"
+    ],
+    "knowsLanguage": ["no", "en"],
+    "alumniOf": [
+      {
+        "@type": "EducationalOrganization",
+        "name": "BI Norwegian Business School"
+      },
+      {
+        "@type": "EducationalOrganization",
+        "name": "Stanford University"
+      }
+    ]
+  })} />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
@@ -299,7 +349,7 @@ const togglePath = toggleLang === defaultLang ? pathWithoutLang : `/${toggleLang
     }
 
     .logo-last {
-      color: #6366f1;
+      color: var(--navy);
       transition: color 0.3s var(--ease-out-expo);
     }
 
@@ -308,7 +358,7 @@ const togglePath = toggleLang === defaultLang ? pathWithoutLang : `/${toggleLang
     }
 
     [data-theme="dark"] .logo-last {
-      color: #818cf8;
+      color: #94a3b8;
     }
 
     .nav-links {

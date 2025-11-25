@@ -18,7 +18,7 @@ export const translations = {
     // Home page
     'home.badge': 'VP Product & Engineering',
     'home.tagline': 'Skalerer B2B SaaS med AI-drevet produktutvikling',
-    'home.intro': '<strong>Produktleder med over 10 års erfaring</strong> i B2B SaaS. Bygger sterke Product-, Engineering- og Design-team og leverer konkrete forretningsresultater gjennom AI-innovasjon og målrettede operasjonelle forbedringer.',
+    'home.intro': '<strong>Produktleder i Norge med over 10 års erfaring</strong> i B2B SaaS. Bygger sterke Product-, Engineering- og Design-team og leverer konkrete forretningsresultater gjennom AI-innovasjon og målrettede operasjonelle forbedringer. Basert i Oslo, jobber med distribuerte team globalt.',
 
     // Leadership Impact
     'home.impact.title': 'Ledelse & Påvirkning',
@@ -181,7 +181,7 @@ export const translations = {
     'contact.email': 'E-post',
     'contact.linkedin': 'LinkedIn',
     'contact.location': 'Sted',
-    'contact.location.text': 'Porsgrunn, Telemark',
+    'contact.location.text': 'Oslo, Norge',
 
     // Footer
     'footer.title': 'La oss jobbe sammen',
@@ -207,7 +207,7 @@ export const translations = {
     // Home page
     'home.badge': 'VP Product & Engineering',
     'home.tagline': 'Scaling B2B SaaS through AI-driven product development',
-    'home.intro': '<strong>Product leader with over 10 years of experience</strong> in B2B SaaS. Building strong Product, Engineering, and Design teams and delivering tangible business results through AI innovation and targeted operational improvements.',
+    'home.intro': '<strong>Product leader in Norway with over 10 years of experience</strong> in B2B SaaS. Building strong Product, Engineering, and Design teams and delivering tangible business results through AI innovation and targeted operational improvements. Based in Oslo, working with distributed teams globally.',
 
     // Leadership Impact
     'home.impact.title': 'Leadership Impact',
@@ -370,7 +370,7 @@ export const translations = {
     'contact.email': 'Email',
     'contact.linkedin': 'LinkedIn',
     'contact.location': 'Location',
-    'contact.location.text': 'Porsgrunn, Telemark',
+    'contact.location.text': 'Oslo, Norway',
 
     // Footer
     'footer.title': 'Let\'s Work Together',

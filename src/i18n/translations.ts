@@ -12,6 +12,7 @@ export const translations = {
     // Navigation
     'nav.home': 'Hjem',
     'nav.about': 'Om meg',
+    'nav.blog': 'Blogg',
     'nav.contact': 'Kontakt',
     'nav.cta': 'Ta kontakt',
 
@@ -183,9 +184,17 @@ export const translations = {
     'contact.location': 'Sted',
     'contact.location.text': 'Oslo, Norge',
 
+    // Blog
+    'blog.title': 'Blogg',
+    'blog.description': 'Tanker om produktstrategi, AI og bygging av B2B SaaS-produkter',
+    'blog.intro': 'Tanker om produktstrategi, AI, engineering-lederskap og bygging av B2B SaaS-produkter.',
+    'blog.empty': 'Ingen innlegg ennå. Kom tilbake snart for innsikt om AI-produktstrategi og B2B SaaS-vekst.',
+    'blog.readMore': 'Les mer →',
+    'blog.backToAll': '← Tilbake til alle innlegg',
+
     // Footer
-    'footer.title': 'La oss jobbe sammen',
-    'footer.subtitle': 'Bygger intelligente systemer for fremtidsrettede team.',
+    'footer.title': 'Produktleder & AI-strateg',
+    'footer.subtitle': 'VP Product & Engineering med 10+ års erfaring i å skalere B2B SaaS gjennom AI-innovasjon og produktledet vekst.',
 
     // Common
     'common.showMore': 'Vis mer',
@@ -201,6 +210,7 @@ export const translations = {
     // Navigation
     'nav.home': 'Home',
     'nav.about': 'About',
+    'nav.blog': 'Blog',
     'nav.contact': 'Contact',
     'nav.cta': 'Get in touch',
 
@@ -372,9 +382,17 @@ export const translations = {
     'contact.location': 'Location',
     'contact.location.text': 'Oslo, Norway',
 
+    // Blog
+    'blog.title': 'Blog',
+    'blog.description': 'Thoughts on product strategy, AI, and building B2B SaaS products',
+    'blog.intro': 'Thoughts on product strategy, AI, engineering leadership, and building B2B SaaS products.',
+    'blog.empty': 'No posts yet. Check back soon for insights on AI product strategy and B2B SaaS growth.',
+    'blog.readMore': 'Read more →',
+    'blog.backToAll': '← Back to all posts',
+
     // Footer
-    'footer.title': 'Let\'s Work Together',
-    'footer.subtitle': 'Building intelligent systems for forward-thinking teams.',
+    'footer.title': 'Product Leader & AI Strategist',
+    'footer.subtitle': 'VP Product & Engineering with 10+ years scaling B2B SaaS through AI innovation and product-led growth.',
 
     // Common
     'common.showMore': 'Show more',

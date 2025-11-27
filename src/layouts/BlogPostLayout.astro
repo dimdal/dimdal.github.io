@@ -1,5 +1,7 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { defaultLang } from '../i18n/translations';
 
 interface Props {
   frontmatter: {
@@ -11,11 +13,16 @@ interface Props {
 }
 
 const { frontmatter } = Astro.props;
-const formattedDate = new Date(frontmatter.date).toLocaleDateString('en-US', {
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const formattedDate = new Date(frontmatter.date).toLocaleDateString(lang === 'no' ? 'nb-NO' : 'en-US', {
   year: 'numeric',
   month: 'long',
   day: 'numeric'
 });
+
+const blogUrl = lang === defaultLang ? '/blog' : `/${lang}/blog`;
 ---
 
 <BaseLayout title={`${frontmatter.title} - Marius Ørvik`} description={frontmatter.description}>
@@ -32,15 +39,22 @@ const formattedDate = new Date(frontmatter.date).toLocaleDateString('en-US', {
       <slot />
     </div>
 
-    <footer class="post-footer">
-      <a href="/blog" class="back-link">← Back to all posts</a>
-    </footer>
+    <div class="post-footer">
+      <a href={blogUrl} class="back-link">{t('blog.backToAll')}</a>
+    </div>
   </article>
 
   <style>
     .blog-post {
       max-width: 700px;
       margin: 0 auto;
+      padding-top: 48px;
+    }
+
+    @media (max-width: 768px) {
+      .blog-post {
+        padding-top: 32px;
+      }
     }
 
     .post-header {
@@ -70,7 +84,13 @@ const formattedDate = new Date(frontmatter.date).toLocaleDateString('en-US', {
     .post-content {
       font-size: 1.1rem;
       line-height: 1.8;
-      margin-bottom: 3rem;
+      margin-bottom: 64px;
+    }
+
+    @media (max-width: 768px) {
+      .post-content {
+        margin-bottom: 48px;
+      }
     }
 
     .post-content :global(h2) {
@@ -142,14 +162,26 @@ const formattedDate = new Date(frontmatter.date).toLocaleDateString('en-US', {
     }
 
     .back-link {
-      color: var(--color-text-light);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--color-accent);
       text-decoration: none;
-      font-weight: 500;
-      transition: color 0.2s;
+      font-weight: 600;
+      font-size: 15px;
+      transition: all 0.2s ease;
+      padding: 12px 0;
     }
 
     .back-link:hover {
-      color: var(--color-accent);
+      color: #ea580c;
+      transform: translateX(-4px);
+    }
+
+    .back-link:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 4px;
+      border-radius: 4px;
     }
 
     @media (max-width: 768px) {

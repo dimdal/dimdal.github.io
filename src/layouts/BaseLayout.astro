@@ -19,6 +19,9 @@ const pathWithoutLang = currentPath.replace(/^\/(no|en)/, '') || '/';
 // Get toggle language
 const toggleLang: Language = lang === 'no' ? 'en' : 'no';
 const togglePath = toggleLang === defaultLang ? pathWithoutLang : `/${toggleLang}${pathWithoutLang}`;
+// Check if on blog page - disable EN switch if so (blog not available in EN)
+const isBlogPath = pathWithoutLang === '/blog' || pathWithoutLang === '/blog/' || pathWithoutLang.startsWith('/blog/');
+const disableEnSwitch = toggleLang === 'en' && isBlogPath;
 ---
 
 <!DOCTYPE html>
@@ -100,10 +103,17 @@ const togglePath = toggleLang === defaultLang ? pathWithoutLang : `/${toggleLang
       <div class="nav-links">
         <a href={lang === defaultLang ? '/' : `/${lang}`} class:list={[{active: pathWithoutLang === '/'}]}>{t('nav.home')}</a>
         <a href={lang === defaultLang ? '/about' : `/${lang}/about`} class:list={[{active: pathWithoutLang === '/about' || pathWithoutLang === '/about/'}]}>{t('nav.about')}</a>
+        {lang !== 'en' && <a href={lang === defaultLang ? '/blog' : `/${lang}/blog`} class:list={[{active: pathWithoutLang === '/blog' || pathWithoutLang === '/blog/' || pathWithoutLang.startsWith('/blog/')}]}>{t('nav.blog')}</a>}
         <a href={lang === defaultLang ? '/contact' : `/${lang}/contact`} class:list={[{active: pathWithoutLang === '/contact' || pathWithoutLang === '/contact/'}]}>{t('nav.contact')}</a>
-        <a href={togglePath} class="lang-switcher" title={`Switch to ${languages[toggleLang]}`} aria-label={toggleLang === 'en' ? 'Switch to English' : 'Bytt til norsk'}>
-          {toggleLang === 'en' ? '🇬🇧' : '🇳🇴'}
-        </a>
+        {disableEnSwitch ? (
+          <button class="lang-switcher disabled" data-tooltip="Blog is not available in English" aria-label="Blog is not available in English" aria-disabled="true" disabled>
+            🇬🇧
+          </button>
+        ) : (
+          <a href={togglePath} class="lang-switcher" title={`Switch to ${languages[toggleLang]}`} aria-label={toggleLang === 'en' ? 'Switch to English' : 'Bytt til norsk'}>
+            {toggleLang === 'en' ? '🇬🇧' : '🇳🇴'}
+          </a>
+        )}
         <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
           <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="5"></circle>
@@ -141,6 +151,7 @@ const togglePath = toggleLang === defaultLang ? pathWithoutLang : `/${toggleLang
           <h4>Pages</h4>
           <a href={lang === defaultLang ? '/' : `/${lang}`}>{t('nav.home')}</a>
           <a href={lang === defaultLang ? '/about' : `/${lang}/about`}>{t('nav.about')}</a>
+          {lang !== 'en' && <a href={lang === defaultLang ? '/blog' : `/${lang}/blog`}>{t('nav.blog')}</a>}
           <a href={lang === defaultLang ? '/contact' : `/${lang}/contact`}>{t('nav.contact')}</a>
         </div>
         <div class="footer-col">
@@ -408,16 +419,76 @@ const togglePath = toggleLang === defaultLang ? pathWithoutLang : `/${toggleLang
       transition: all 0.3s var(--ease-out-expo);
       line-height: 1;
       border: 2px solid transparent;
+      background: transparent;
+      cursor: pointer;
     }
 
     .lang-switcher::after {
       display: none;
     }
 
-    .lang-switcher:hover {
+    .lang-switcher:hover:not(.disabled) {
       transform: scale(1.1);
       background: var(--color-bg-alt);
       border-color: var(--color-border);
+    }
+
+    .lang-switcher.disabled {
+      opacity: 0.4;
+      cursor: not-allowed !important;
+      position: relative;
+    }
+
+    .lang-switcher.disabled::after {
+      content: attr(data-tooltip);
+      display: block;
+      position: absolute;
+      bottom: calc(100% + 12px);
+      left: 50%;
+      transform: translateX(-50%) translateY(4px);
+      background: var(--color-text);
+      color: var(--color-bg);
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 0.875rem;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.15s ease, transform 0.15s ease;
+      z-index: 1000;
+      font-weight: 500;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .lang-switcher.disabled::before {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: calc(100% + 4px);
+      left: 50%;
+      transform: translateX(-50%) translateY(4px);
+      border: 4px solid transparent;
+      border-top-color: var(--color-text);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.15s ease, transform 0.15s ease;
+      z-index: 1000;
+    }
+
+    .lang-switcher.disabled:hover::after,
+    .lang-switcher.disabled:hover::before {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    [data-theme="dark"] .lang-switcher.disabled::after {
+      background: var(--color-bg-alt);
+      color: var(--color-text);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    [data-theme="dark"] .lang-switcher.disabled::before {
+      border-top-color: var(--color-bg-alt);
     }
 
     .theme-toggle {

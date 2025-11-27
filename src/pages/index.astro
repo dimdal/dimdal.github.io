@@ -190,12 +190,12 @@ const t = useTranslations(lang);
     }
 
     .gradient-blob {
-      width: 400px;
-      height: 400px;
+      width: 500px;
+      height: 500px;
       background: radial-gradient(circle at center, var(--color-accent), var(--color-accent-secondary));
-      opacity: 0.25;
+      opacity: 0.35;
       animation: float 8s ease-in-out infinite, morphBlob 10s ease-in-out infinite;
-      filter: blur(40px);
+      filter: blur(60px);
       will-change: transform;
     }
 
@@ -298,7 +298,7 @@ const t = useTranslations(lang);
     }
 
     .hero h1 {
-      animation: slideInUp 0.6s var(--ease-out-expo) 0.1s both;
+      animation: slideInUp 0.8s var(--ease-out-expo) 0.15s both;
     }
 
     .tagline {
@@ -306,7 +306,7 @@ const t = useTranslations(lang);
       color: var(--color-text-light);
       margin-bottom: 1.5rem;
       font-weight: 500;
-      animation: slideInUp 0.6s var(--ease-out-expo) 0.2s both;
+      animation: slideInUp 0.8s var(--ease-out-expo) 0.3s both;
     }
 
     .intro {
@@ -315,7 +315,7 @@ const t = useTranslations(lang);
       max-width: 800px;
       color: var(--color-text-light);
       margin-bottom: 2.5rem;
-      animation: slideInUp 0.6s var(--ease-out-expo) 0.3s both;
+      animation: slideInUp 0.8s var(--ease-out-expo) 0.45s both;
     }
 
     .intro strong {
@@ -384,7 +384,10 @@ const t = useTranslations(lang);
     }
 
     .impact-card:hover {
-      transform: translateX(12px) rotate(0.5deg);
+      transform: translateY(-12px) translateX(8px) rotate(-0.5deg);
+      box-shadow:
+        0 20px 40px -20px rgba(245, 158, 11, 0.3),
+        0 0 0 1px rgba(245, 158, 11, 0.1);
     }
 
     .impact-card:hover::after {
@@ -579,12 +582,14 @@ const t = useTranslations(lang);
     }
 
     .button:hover {
-      transform: translateY(-3px);
+      transform: translateY(-4px) scale(1.02);
       background: var(--color-accent-hover);
       border-color: var(--color-accent-hover);
       color: #18181b;
       text-decoration: none;
-      box-shadow: 0 8px 20px -4px rgba(232, 93, 84, 0.3);
+      box-shadow:
+        0 0 30px rgba(245, 158, 11, 0.4),
+        0 12px 24px -8px rgba(245, 158, 11, 0.4);
     }
 
     [data-theme="dark"] .button:hover {
@@ -610,8 +615,8 @@ const t = useTranslations(lang);
       color: var(--color-bg);
       border-color: var(--color-text);
       text-decoration: none;
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px -4px rgba(24, 24, 27, 0.2);
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 12px 24px -8px rgba(24, 24, 27, 0.3);
     }
 
     .button-secondary:hover svg {

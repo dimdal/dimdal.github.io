@@ -10,6 +10,7 @@ interface Props {
     description: string;
     date: string;
     author?: string;
+    image?: string;
   };
 }
 
@@ -29,6 +30,7 @@ const blogUrl = lang === defaultLang ? '/blog' : `/${lang}/blog`;
 <BaseLayout
   title={`${frontmatter.title} - Marius Ørvik`}
   description={frontmatter.description}
+  image={frontmatter.image}
   article={true}
 >
   <article class="blog-post">

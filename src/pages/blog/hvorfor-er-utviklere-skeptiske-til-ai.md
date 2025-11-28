@@ -4,6 +4,7 @@ title: Hvorfor er utviklere så skeptiske til å ta i bruk AI?
 description: En stor del av jobben som utvikler handler om å løse problemer. Ofte med å skrive kode. Med AI beskriver vi bare problemet, får kode tilbake, og må sitte å lese andres kode. Det er kjedelig, det. Eller?
 date: 2025-11-27
 author: Marius Ørvik
+image: /og-image.svg
 ---
 Jeg hører det stadig vekk. Erfarne utviklere som rister på hodet av AI-koding. "Det fungerer ikke til annet enn enkle prototyper," sier de.
 

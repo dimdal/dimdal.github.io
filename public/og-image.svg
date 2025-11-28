@@ -1,0 +1,29 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dark background with gradient -->
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e293b;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Accent decoration -->
+  <rect x="40" y="40" width="6" height="120" fill="#f59e0b" rx="3"/>
+
+  <!-- Logo/Name -->
+  <text x="70" y="90" font-family="system-ui, -apple-system, sans-serif" font-size="48" font-weight="700" fill="#ffffff">
+    Marius Ørvik
+  </text>
+
+  <!-- Title -->
+  <text x="70" y="140" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="500" fill="#94a3b8">
+    VP Product &amp; Engineering
+  </text>
+
+  <!-- Domain -->
+  <text x="70" y="560" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="500" fill="#64748b">
+    mariusorvik.com
+  </text>
+</svg>

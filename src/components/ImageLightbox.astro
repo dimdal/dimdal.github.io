@@ -1,0 +1,275 @@
+---
+// Elegant image lightbox for blog posts
+---
+
+<div id="image-lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="lightbox-backdrop"></div>
+  <div class="lightbox-content">
+    <button class="lightbox-close" aria-label="Close image viewer" type="button">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+    <img class="lightbox-image" src="" alt="" />
+    <div class="lightbox-caption"></div>
+  </div>
+</div>
+
+<style>
+  .lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+  }
+
+  .lightbox[data-active="true"] {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .lightbox-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  .lightbox-content {
+    position: relative;
+    z-index: 1;
+    max-width: 95vw;
+    max-height: 95vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0.95);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    margin: auto;
+  }
+
+  .lightbox[data-active="true"] .lightbox-content {
+    transform: scale(1);
+  }
+
+  .lightbox-image {
+    max-width: 90vw;
+    max-height: 85vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow:
+      0 20px 60px rgba(0, 0, 0, 0.5),
+      0 0 0 1px rgba(255, 255, 255, 0.1);
+    cursor: zoom-out;
+  }
+
+  .lightbox-caption {
+    margin-top: 1.5rem;
+    padding: 0 2rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.95rem;
+    text-align: center;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    max-width: 600px;
+    line-height: 1.5;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  }
+
+  .lightbox-close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
+    color: rgba(255, 255, 255, 0.9);
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 2;
+  }
+
+  .lightbox-close:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.25);
+    transform: scale(1.05);
+    color: white;
+  }
+
+  .lightbox-close:active {
+    transform: scale(0.95);
+  }
+
+  .lightbox-close:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.5);
+    outline-offset: 4px;
+  }
+
+  @media (max-width: 768px) {
+    .lightbox-close {
+      top: 1rem;
+      right: 1rem;
+      width: 44px;
+      height: 44px;
+    }
+
+    .lightbox-image {
+      max-width: 95vw;
+      max-height: 80vh;
+    }
+
+    .lightbox-caption {
+      font-size: 0.875rem;
+      padding: 0 1rem;
+      margin-top: 1rem;
+    }
+  }
+
+  /* Cursor hint for clickable images */
+  :global(.post-content img) {
+    cursor: zoom-in;
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  :global(.post-content img:hover) {
+    transform: scale(1.01);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  }
+</style>
+
+<script>
+  function initImageLightbox() {
+    const lightbox = document.getElementById('image-lightbox');
+    if (!lightbox) return;
+
+    const lightboxImage = lightbox.querySelector('.lightbox-image') as HTMLImageElement;
+    const lightboxCaption = lightbox.querySelector('.lightbox-caption') as HTMLDivElement;
+    const closeButton = lightbox.querySelector('.lightbox-close') as HTMLButtonElement;
+    const backdrop = lightbox.querySelector('.lightbox-backdrop') as HTMLDivElement;
+
+    // Find all images in blog post content
+    const contentImages = document.querySelectorAll('.post-content img');
+
+    function openLightbox(img: HTMLImageElement) {
+      if (!lightboxImage || !lightbox) return;
+
+      lightboxImage.src = img.src;
+      lightboxImage.alt = img.alt || '';
+
+      // Show caption if alt text exists
+      if (img.alt && lightboxCaption) {
+        lightboxCaption.textContent = img.alt;
+        lightboxCaption.style.display = 'block';
+      } else if (lightboxCaption) {
+        lightboxCaption.style.display = 'none';
+      }
+
+      // Prevent body scroll without affecting layout
+      document.body.style.overflow = 'hidden';
+
+      lightbox.setAttribute('data-active', 'true');
+      lightbox.setAttribute('aria-hidden', 'false');
+
+      // Focus management
+      closeButton?.focus();
+    }
+
+    function closeLightbox() {
+      if (!lightbox) return;
+
+      lightbox.setAttribute('data-active', 'false');
+      lightbox.setAttribute('aria-hidden', 'true');
+
+      // Restore body scroll
+      document.body.style.overflow = '';
+
+      // Return focus to the image that was clicked
+      const activeImage = document.querySelector('.post-content img[data-lightbox-active]') as HTMLElement;
+      if (activeImage) {
+        activeImage.removeAttribute('data-lightbox-active');
+        activeImage.focus();
+      }
+    }
+
+    // Add click handlers to all content images
+    contentImages.forEach((img) => {
+      const imageElement = img as HTMLImageElement;
+
+      // Make images keyboard accessible
+      imageElement.setAttribute('tabindex', '0');
+      imageElement.setAttribute('role', 'button');
+      imageElement.setAttribute('aria-label', `View larger: ${imageElement.alt || 'image'}`);
+
+      imageElement.addEventListener('click', () => {
+        imageElement.setAttribute('data-lightbox-active', 'true');
+        openLightbox(imageElement);
+      });
+
+      // Keyboard support for images
+      imageElement.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          imageElement.setAttribute('data-lightbox-active', 'true');
+          openLightbox(imageElement);
+        }
+      });
+    });
+
+    // Close button
+    closeButton?.addEventListener('click', closeLightbox);
+
+    // Click backdrop to close
+    backdrop?.addEventListener('click', closeLightbox);
+
+    // Click image to close
+    lightboxImage?.addEventListener('click', closeLightbox);
+
+    // ESC key to close
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.getAttribute('data-active') === 'true') {
+        closeLightbox();
+      }
+    });
+
+    // Prevent body scroll when lightbox is open
+    lightbox.addEventListener('wheel', (e) => {
+      if (lightbox.getAttribute('data-active') === 'true') {
+        e.preventDefault();
+      }
+    }, { passive: false });
+  }
+
+  // Initialize on page load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initImageLightbox);
+  } else {
+    initImageLightbox();
+  }
+
+  // Re-initialize on navigation (for SPA-like behavior)
+  document.addEventListener('astro:page-load', initImageLightbox);
+</script>

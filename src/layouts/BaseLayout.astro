@@ -8,13 +8,17 @@ interface Props {
   description?: string;
   image?: string;
   article?: boolean;
+  author?: string;
+  publishDate?: string;
 }
 
 const {
   title,
   description = "VP Product & Engineering | B2B SaaS | AI Product Strategy",
   image = "/og-image.svg",
-  article = false
+  article = false,
+  author,
+  publishDate
 } = Astro.props;
 const currentPath = Astro.url.pathname;
 const lang = getLangFromUrl(Astro.url);
@@ -49,6 +53,8 @@ const disableEnSwitch = toggleLang === 'en' && isBlogPath;
   <meta property="og:description" content={description}>
   <meta property="og:image" content={new URL(image, Astro.site)}>
   <meta property="og:site_name" content="Marius Ørvik">
+  {article && author && <meta property="article:author" content={author}>}
+  {article && publishDate && <meta property="article:published_time" content={publishDate}>}
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">

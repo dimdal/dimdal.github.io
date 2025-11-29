@@ -32,6 +32,8 @@ const blogUrl = lang === defaultLang ? '/blog' : `/${lang}/blog`;
   description={frontmatter.description}
   image={frontmatter.image}
   article={true}
+  author={frontmatter.author}
+  publishDate={frontmatter.date}
 >
   <article class="blog-post">
     <header class="post-header">
